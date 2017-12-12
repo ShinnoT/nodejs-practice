@@ -9,12 +9,28 @@ const os = require("os");
 // fs.appendFile('greetings.txt', 'Hello World!');
 // this is the classic way which will give an error
 
+
+// ------------------------
+// using userInfo from os module
+let user = os.userInfo();
+//userInfo doesnt need any arguments, they are optional
+// if you log this, it should be a hash, dictionary like a JSON file
+// { uid: someNumber,
+  // gid: someNumber,
+  // username: 'whatever',
+  // homedir: '/blah/blah',
+  // shell: '/blah/blah' }
+
+
+
 // so you can do either:
-// fs.appendFile('greetings.txt', 'Hello World!', function (err) {
-//   if (err) {
-//     console.log('Unable to write to file');
-//   }
-// });
+fs.appendFile('greetings.txt', 'Hello ' + user.username + '!', function (err) {
+// for string interpolation use:
+// fs.appendFile('greetings.txt', `Hello ${user.username}!`, function (err) {
+  if (err) {
+    console.log('Unable to write to file');
+  }
+});
 
 // or a more new way of doing it
 // fs.appendFileSync('greetings.txt', 'Hello World!');
@@ -26,8 +42,5 @@ const os = require("os");
 // if you run the app again, it will add Hello World! again
 
 
-// ------------------------
-// using userInfo from os module
-let user = os.userInfo();
-//userInfo doesnt need any arguments, they are optional
-console.log(user);
+//now when you run it it should add
+//Hello shinnot!
