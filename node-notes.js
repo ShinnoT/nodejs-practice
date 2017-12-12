@@ -14,3 +14,12 @@
   // document --> references the DOM up above in the browser (HTML, CSS, etc.)
 // on node:
   // process same thing as document on browser
+
+
+// why is node useful?
+// node is an event driven, non blocking I/O model (i/o == input and output)
+// using libraries through npm
+
+// how do you run node files?
+// on command line type:
+// node file-name.js
