@@ -54,3 +54,5 @@ const notes = require('./notes.js');
 let res = notes.addNote();
 console.log(res);
 
+let sum = notes.add(5, 3);
+console.log('Result: ', sum);
