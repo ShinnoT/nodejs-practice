@@ -15,7 +15,7 @@ const notes = require('./notes.js');
 
 // ------------------------
 // using userInfo from os module
-let user = os.userInfo();
+// let user = os.userInfo();
 //userInfo doesnt need any arguments, they are optional
 // if you log this, it should be a hash, dictionary like a JSON file
 // { uid: someNumber,
@@ -29,11 +29,11 @@ let user = os.userInfo();
 // so you can do either:
 // fs.appendFile('greetings.txt', 'Hello ' + user.username + '!', function (err) {
 // for string interpolation use:
-fs.appendFile('greetings.txt', `Hello ${user.username}! You are ${notes.age} years old!`, function (err) {
-  if (err) {
-    console.log('Unable to write to file');
-  }
-});
+// fs.appendFile('greetings.txt', `Hello ${user.username}! You are ${notes.age} years old!`, function (err) {
+//   if (err) {
+//     console.log('Unable to write to file');
+//   }
+// });
 
 // or a more new way of doing it
 // fs.appendFileSync('greetings.txt', 'Hello World!');
@@ -47,3 +47,10 @@ fs.appendFile('greetings.txt', `Hello ${user.username}! You are ${notes.age} yea
 
 //now when you run it it should add
 //Hello shinnot!
+
+
+
+// -----------------------
+let res = notes.addNote();
+console.log(res);
+
