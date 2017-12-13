@@ -6,6 +6,8 @@ const os = require("os");
 // now you can use the fs (file system library)
 // which is stored in the variable fs
 
+const _ = require('lodash');
+
 // requiring a local file that you made instead of a library:
 const notes = require('./notes.js');
 
@@ -56,3 +58,10 @@ console.log(res);
 
 let sum = notes.add(5, 3);
 console.log('Result: ', sum);
+
+console.log(_.isString(true));
+console.log(_.isString('hello'));
+
+let unfilterdArray = ['shinno', 1, 'shinno', 1, 2, 3];
+let filteredArray = _.uniq(unfilterdArray);
+console.log(filteredArray);
