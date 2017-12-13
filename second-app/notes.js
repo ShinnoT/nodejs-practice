@@ -23,3 +23,8 @@ console.log(module);
 
 module.exports.age = 25;
 // this will now be accessed in app.js
+
+module.exports.addNote = () => {
+  console.log('addNote');
+  return 'New note';
+};
