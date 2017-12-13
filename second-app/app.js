@@ -6,6 +6,9 @@ const os = require("os");
 // now you can use the fs (file system library)
 // which is stored in the variable fs
 
+// requiring a local file that you made instead of a library:
+const notes = require('./notes.js');
+
 // fs.appendFile('greetings.txt', 'Hello World!');
 // this is the classic way which will give an error
 
@@ -24,9 +27,9 @@ let user = os.userInfo();
 
 
 // so you can do either:
-fs.appendFile('greetings.txt', 'Hello ' + user.username + '!', function (err) {
+// fs.appendFile('greetings.txt', 'Hello ' + user.username + '!', function (err) {
 // for string interpolation use:
-// fs.appendFile('greetings.txt', `Hello ${user.username}!`, function (err) {
+fs.appendFile('greetings.txt', `Hello ${user.username}! You are ${notes.age} years old!`, function (err) {
   if (err) {
     console.log('Unable to write to file');
   }
