@@ -1,4 +1,4 @@
-console.log("starting app");
+console.log("starting app.js");
 
 // load a built in module (library)
 const fs = require("fs");
