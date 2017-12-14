@@ -65,3 +65,24 @@ console.log(_.isString('hello'));
 let unfilterdArray = ['shinno', 1, 'shinno', 1, 2, 3];
 let filteredArray = _.uniq(unfilterdArray);
 console.log(filteredArray);
+
+
+console.log(process.argv);
+// will output all the commands run on terminal
+// for example if I type node app.js list on terminal
+// it will output
+// [ '/usr/bin/node',
+//   '/home/shinnot/code/ShinnoT/nodejs-practice/second-app/app.js',
+//   'list' ]
+
+// so to access some user input, say list, then we can access in dex of element in the array
+let command = process.argv[2];
+console.log(`command type: ${command}`);
+
+if (command === 'add') {
+  console.log('adding note');
+} else if (command === 'list') {
+  console.log('listing notes');
+} else {
+  console.log('no command stated');
+}
