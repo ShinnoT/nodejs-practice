@@ -86,3 +86,9 @@ if (command === 'add') {
 } else {
   console.log('command not recognized');
 }
+
+//however if you want to pass more argments
+// for example node app.js remove --title="shinno" or something
+// then it gets complex cuz you have to access so many things via the index in the array
+// THAT IS WHY WE CAN USE THIRD PARTY MODULES TO MAKE LIFE EASIER
+// it will divide it up into key value pair in hashes so that we can access them through name
