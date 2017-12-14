@@ -84,5 +84,5 @@ if (command === 'add') {
 } else if (command === 'list') {
   console.log('listing notes');
 } else {
-  console.log('no command stated');
+  console.log('command not recognized');
 }
