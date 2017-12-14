@@ -7,6 +7,7 @@ const os = require("os");
 // which is stored in the variable fs
 
 const _ = require('lodash');
+const yargs = require('yargs');
 
 // requiring a local file that you made instead of a library:
 const notes = require('./notes.js');
@@ -53,21 +54,22 @@ const notes = require('./notes.js');
 
 
 // -----------------------
-let res = notes.addNote();
-console.log(res);
+// let res = notes.addNote();
+// console.log(res);
 
-let sum = notes.add(5, 3);
-console.log('Result: ', sum);
+// let sum = notes.add(5, 3);
+// console.log('Result: ', sum);
 
-console.log(_.isString(true));
-console.log(_.isString('hello'));
+// console.log(_.isString(true));
+// console.log(_.isString('hello'));
 
-let unfilterdArray = ['shinno', 1, 'shinno', 1, 2, 3];
-let filteredArray = _.uniq(unfilterdArray);
-console.log(filteredArray);
+// let unfilterdArray = ['shinno', 1, 'shinno', 1, 2, 3];
+// let filteredArray = _.uniq(unfilterdArray);
+// console.log(filteredArray);
 
+//------------------------
 
-console.log(process.argv);
+// console.log(process.argv);
 // will output all the commands run on terminal
 // for example if I type node app.js list on terminal
 // it will output
@@ -76,11 +78,16 @@ console.log(process.argv);
 //   'list' ]
 
 // so to access some user input, say list, then we can access in dex of element in the array
+const argv = yargs.argv;
 let command = process.argv[2];
 console.log(`command type: ${command}`);
+console.log('process: ', process.argv);
+console.log('yargs: ', argv)
 
 if (command === 'add') {
   console.log('adding note');
+  // if we wanted to actually add note when user inputs add --title "blah blah"
+  notes.addNote(argv.title, argv.body);
 } else if (command === 'list') {
   console.log('listing notes');
 } else {
