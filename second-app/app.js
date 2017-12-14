@@ -90,6 +90,7 @@ if (command === 'add') {
   notes.addNote(argv.title, argv.body);
 } else if (command === 'list') {
   console.log('listing notes');
+  notes.getAll();
 } else {
   console.log('command not recognized');
 }

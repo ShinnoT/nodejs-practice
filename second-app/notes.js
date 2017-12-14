@@ -40,10 +40,15 @@ let addNote = (title, body) => {
   console.log('adding note: ', title, body);
 };
 
+let getAll = () => {
+  console.log('getting all notes');
+};
+
 // but definind a function alone is not useful cuz we're not exporting it to use it in app.js
 // so we export it with module.exports
 module.exports = {
   // addNote: addNote
   //however in ES6 you can just do a shortcut by typing
-  addNote
+  addNote,
+  getAll
 }
