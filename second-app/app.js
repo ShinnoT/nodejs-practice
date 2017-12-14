@@ -92,3 +92,6 @@ if (command === 'add') {
 // then it gets complex cuz you have to access so many things via the index in the array
 // THAT IS WHY WE CAN USE THIRD PARTY MODULES TO MAKE LIFE EASIER
 // it will divide it up into key value pair in hashes so that we can access them through name
+
+
+//called yargs
