@@ -46,8 +46,37 @@ let addNote = (title, body) => {
     body
   };
 
-  notes.push(note);
-  fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+  //useful so that you maintain previous notes when adding new on
+  // however if the JSON file doesnt exist, because its trying to read
+  // from non-existing file, app.js will crash
+      // let notesString = fs.readFileSync('notes-data.json');
+      // notes = JSON.parse(notesString);
+  // so we use try/catch
+  // the code inside try will run if it doesn/t throw error
+  // else fallback to catch and do something else
+  try {
+    let notesString = fs.readFileSync('notes-data.json');
+    notes = JSON.parse(notesString);
+  } catch (e) {
+    //note that catch takes an argument
+    //if you dont want any fallback, then we can leave this empty
+  }
+
+  // let duplicateNotes = notes.filter((note) => {
+  //   return note.title === title;
+  //   // returns an array duplicateNotes with duplicate notes
+  // });
+  // ES6 syntax
+  let duplicateNotes = notes.filter(note => note.title === title);
+
+  if (duplicateNotes.length === 0) {
+    notes.push(note);
+    fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+    console.log("note added!");
+  } else {
+    console.log("sorry you already have a note with that title");
+  }
+
 };
 
 let getAll = () => {
