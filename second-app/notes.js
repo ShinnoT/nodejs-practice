@@ -99,6 +99,9 @@ let removeNote = (title) => {
   return notes.length !== filteredNotes.length;
 };
 
+let getNote = (title) => {
+
+};
 
 // but definind a function alone is not useful cuz we're not exporting it to use it in app.js
 // so we export it with module.exports
@@ -107,7 +110,8 @@ module.exports = {
   //however in ES6 you can just do a shortcut by typing
   addNote,
   getAll,
-  removeNote
+  removeNote,
+  getNote
 }
 
 
