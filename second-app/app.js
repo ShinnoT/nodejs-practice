@@ -92,6 +92,11 @@ if (command === 'add') {
 } else if (command === 'list') {
   console.log('listing notes');
   notes.getAll();
+} else if (command === 'remove') {
+  console.log('removing note');
+  let noteRemoved = notes.removeNote(argv.title);
+  let message = noteRemoved ? 'note removed' : 'note NOT found';
+  console.log(message);
 } else {
   console.log('command not recognized');
 }
