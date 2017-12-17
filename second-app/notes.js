@@ -100,7 +100,14 @@ let removeNote = (title) => {
 };
 
 let getNote = (title) => {
-
+  let notes = fetchNotes();
+  let singleNote = notes.filter(note => note.title === title);
+  if (singleNote.length === 0) {
+    console.log('sorry message not found');
+  } else {
+    let note = singleNote[0];
+    console.log(`title: ${note.title}, body: ${note.body}`);
+  }
 };
 
 // but definind a function alone is not useful cuz we're not exporting it to use it in app.js

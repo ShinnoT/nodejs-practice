@@ -97,6 +97,9 @@ if (command === 'add') {
   let noteRemoved = notes.removeNote(argv.title);
   let message = noteRemoved ? 'note removed' : 'note NOT found';
   console.log(message);
+} else if (command === 'read') {
+  console.log('reading note');
+  notes.getNote(argv.title);
 } else {
   console.log('command not recognized');
 }
