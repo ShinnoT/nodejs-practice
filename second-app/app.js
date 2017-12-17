@@ -91,7 +91,15 @@ if (command === 'add') {
   notes.addNote(argv.title, argv.body);
 } else if (command === 'list') {
   console.log('listing notes');
-  notes.getAll();
+  let allNotes = notes.getAll();
+  debugger;
+  if (allNotes.length === 0) {
+    console.log("no notes found");
+  } else {
+    allNotes.forEach((note) => {
+      console.log(`title: ${note.title}, body: ${note.body}`);
+    });
+  }
 } else if (command === 'remove') {
   console.log('removing note');
   let noteRemoved = notes.removeNote(argv.title);

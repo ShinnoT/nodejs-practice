@@ -86,7 +86,8 @@ let addNote = (title, body) => {
 };
 
 let getAll = () => {
-  let allNotes = fetchNotes();
+  let allTheNotes = fetchNotes();
+  return allTheNotes;
   //one way of doing it below:
   // if (allNotes.length === 0) {
   //   console.log('no notes in database. to create new note use the add command');
@@ -96,6 +97,7 @@ let getAll = () => {
   //   }
   // }
 };
+debugger;
 
 let removeNote = (title) => {
   //fetch notes
