@@ -91,6 +91,21 @@ const argv = yargs
       alias: 'b'
     }
   })
+  .command('list', 'list all recorded notes')
+  .command('remove', 'remove specified note', {
+    title: {
+      describe: 'title of note',
+      demand: true,
+      alias: 't'
+    }
+  })
+  .command('read', 'display content of specified note', {
+    title: {
+      describe: 'title of note',
+      demand: true,
+      alias: 't'
+    }
+  })
   .help()
   .argv;
   // command function in the case above lets you specify descriptions for different commands
