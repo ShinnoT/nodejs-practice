@@ -93,6 +93,10 @@ const argv = yargs
   })
   .help()
   .argv;
+  // command function in the case above lets you specify descriptions for different commands
+  // for example: description of the command and of course options in strings
+  // but also the demand key of title and body options objects if set to true, means is a required option
+  // alias gives shortcuts to the option so instead of --title u can run -t
 // let command = process.argv[2];
 let command = argv._[0];
 console.log(`command type: ${command}`);
