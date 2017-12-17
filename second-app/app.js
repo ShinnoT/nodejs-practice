@@ -78,7 +78,21 @@ const notes = require('./notes.js');
 //   'list' ]
 
 // so to access some user input, say list, then we can access in dex of element in the array
-const argv = yargs.argv;
+const argv = yargs
+  .command('add', 'add a new note', {
+    title: {
+      describe: 'title of note',
+      demand: true,
+      alias: 't'
+    },
+    body: {
+      describe: 'body of note',
+      demand: true,
+      alias: 'b'
+    }
+  })
+  .help()
+  .argv;
 // let command = process.argv[2];
 let command = argv._[0];
 console.log(`command type: ${command}`);
