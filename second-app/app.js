@@ -77,13 +77,13 @@ const notes = require('./notes.js');
 //   '/home/shinnot/code/ShinnoT/nodejs-practice/second-app/app.js',
 //   'list' ]
 
-let title = {
+let titleOptions = {
   describe: 'title of note',
   demand: true,
   alias: 't'
 };
 
-let body = {
+let bodyOptions = {
   describe: 'body of note',
   demand: true,
   alias: 'b'
@@ -92,15 +92,15 @@ let body = {
 // so to access some user input, say list, then we can access in dex of element in the array
 const argv = yargs
   .command('add', 'add a new note', {
-    title: title,
-    body: body
+    title: titleOptions,
+    body: bodyOptions
   })
   .command('list', 'list all recorded notes')
   .command('remove', 'remove specified note', {
-    title: title
+    title: titleOptions
   })
   .command('read', 'display content of specified note', {
-    title: title
+    title: titleOptions
   })
   .help()
   .argv;
