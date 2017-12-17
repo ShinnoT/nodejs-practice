@@ -83,7 +83,7 @@ const argv = yargs.argv;
 let command = argv._[0];
 console.log(`command type: ${command}`);
 // console.log('process: ', process.argv);
-// console.log('yargs: ', argv)
+console.log('yargs: ', argv)
 
 if (command === 'add') {
   console.log('adding note');
