@@ -32,3 +32,21 @@ console.log(person);
 //note that you can use nodemon inspect blah
 
 // when testing a new feature gotta do node inspect app.js read --title="note 1"
+
+
+
+//HOWEVER you can debug not just with old boring terminal
+//you can type node --inspect-brk filename.js
+//then open chrome and type chrome://inspect
+//then click open dedicated dev tools for node
+//then a more fancy GUI for debugging will show up
+
+//esc to show/hide console
+
+//also can use nodemon --inspect-brk filename.js
+
+
+
+
+// ---------------------- dev tools
+// can just click on line number to add breakpoints like debugger;
