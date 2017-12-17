@@ -23,3 +23,7 @@
 // how do you run node files?
 // on command line type:
 // node file-name.js
+
+
+
+// hash in JS is called object
